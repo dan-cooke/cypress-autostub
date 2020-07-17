@@ -6,7 +6,7 @@ This plugin for the [Cypress automation framework](https://www.cypress.io/) alle
 - Written in Typescript, strongly typed interfaces for all functions
 - Global default configs in JS
 - Local spec configs to override globals
-- Simple to setup + mantain
+- Simple to setup + mantain, plug-n-play auto mocking
 - CI/Robot friendly (record with an env variable)
 
 ### API Docs
