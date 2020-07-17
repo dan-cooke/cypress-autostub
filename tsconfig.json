@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "strict": true,
+      "target": "ES5",
+      "module": "CommonJS",
+      "declaration": true,
+      "lib": ["es6", "dom"],
+      "outDir": "dist",
+      "types": ["cypress", "node"]
+    },
+    "include": [
+      "**/*.ts"
+    ]
+}
