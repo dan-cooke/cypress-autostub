@@ -9,15 +9,19 @@ This plugin for the [Cypress automation framework](https://www.cypress.io/) alle
 - Simple to setup + mantain
 - CI/Robot friendly (record with an env variable)
 
+### API Docs
+View the API docs [here](https://dan-cooke.github.io/cypress-autostub/index.html)
+
 ### Installation
 
 ```
 yarn install cypress-autostub
 ```
 
+----
 
 ### Setup
-Setup the plugin along with any desired [global settings](#global-settings) in `cypress/plugins/index.js`
+Setup the plugin along with any desired [global settings](https://dan-cooke.github.io/cypress-autostub/interfaces/_types_.autostubglobalconfig.html) in `cypress/plugins/index.js`
 
 ```javascript
 // Import the plugin
@@ -32,8 +36,6 @@ module.exports = (on, config) => {
 
 
 Import the stubbing/recording function in your spec files
-
-**And thats it!** - it should work straight away.
 
 **example.spec.js**
 ```javascript
@@ -54,11 +56,15 @@ describe('Some Feature', () => {
 })
 ```
 
+And you are good to go!
+
+----
+
 
 ### Recording
 Recording is the process of listening to the network requests that are fired during the execution of your test, and writing the responses to disk.
 
-##### Mock Files
+#### Mock Files
 Mock files are stored on disk in a format that can be directly plugged into `cy.route`.
 
 The default location for these mock responses to be stored is `cypress/mocks` but this can be configured [globally](#global-settings)
@@ -66,6 +72,7 @@ The default location for these mock responses to be stored is `cypress/mocks` bu
 The name of the mock file is tied to:
 
 a: The currently executing spec
+
 b: The currently executing test
 
 So if you are running the following test in `SomePage/example.spec.js`:
@@ -83,17 +90,19 @@ The mock file will by default be stored at:
 
 > **Note:** The spacing in the file name is something I was not entirely happy with , and may be subject to change (or be configurable)
 
-##### When does it record?
+#### When does it record?
 Provided the currently executing spec file has called `autoStub` , the plugin will begin recording if any of the following are true:
 
 1. `CYPRESS_FORCE_RECORD` is set in the environment
-2. `forceRecord: true` is set [globally](#global-settings)
+2. `forceRecord: true` is set [globally](https://dan-cooke.github.io/cypress-autostub/interfaces/_types_.autostubglobalconfig.html)
 3. `forceRecord: true` is set [locally](#local-settings)
 
-##### Force recording
+#### Force recording
 There is no such thing as "cleaning" up your mock files. If a mock file already exists and the plugin is **force recording**. The previous mock file will be overwritten.
 
 I believe this is the least error prone method of mantaining the mock files.
+
+----
 
 ### Stubbing
 Stubbing is very simply calling:
@@ -103,6 +112,8 @@ cy.route()
 
 With the data stored in the [mock files](#mock-files) used as arguments for the `cy.route`
 
+
+----
 
 ### Troubleshooting
 
