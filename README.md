@@ -42,11 +42,14 @@ Import the stubbing/recording function in your spec files
 import { autoStub } from 'cypress-autostub'
 
 describe('Some Feature', () => {
+    beforeEach(() => {
+        // It can be called from any lifecycle hook
+        autoStub()
+    })
 
     it('should do the thing', () => {
-        // Use it in the body of the test you want to stub
+        // Or from inside a test body
         autoStub()
-
     })
 })
 ```
