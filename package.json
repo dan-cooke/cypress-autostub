@@ -1,6 +1,7 @@
 {
   "name": "cypress-autostub",
-  "version": "1.0.0",
+  "version": "1.0.2",
+  "author": "Daniel Cooke <danielcooke1996@gmail.com>",
   "description": "",
   "main": "dist/index.js",
   "scripts": {

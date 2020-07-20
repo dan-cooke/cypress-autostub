@@ -57,7 +57,10 @@ const autoStubSetup = (
   globalSettings: AutoStubGlobalConfig
 ) => {
   if (globalSettings) {
-    globalConfig = globalSettings;
+    globalConfig = {
+      ...globalConfig,
+      ...globalSettings,
+    };
   }
 
   on("task", pluginTasks);
