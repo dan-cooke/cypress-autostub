@@ -43,13 +43,8 @@ import { autoStub } from 'cypress-autostub'
 
 describe('Some Feature', () => {
 
-    beforeEach(() => {
-        // Put it in a before each
-        autoStub()
-
-    })
     it('should do the thing', () => {
-        // Or even at the test level
+        // Use it in the body of the test you want to stub
         autoStub()
 
     })
