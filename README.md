@@ -6,7 +6,7 @@ This plugin for the [Cypress automation framework](https://www.cypress.io/) alle
 - Written in Typescript, strongly typed interfaces for all functions
 - Global default configs in JS
 - Local spec configs to override globals
-- Simple to setup + mantain
+- Simple to setup + mantain, plug-n-play auto mocking
 - CI/Robot friendly (record with an env variable)
 
 ### API Docs
@@ -43,13 +43,8 @@ import { autoStub } from 'cypress-autostub'
 
 describe('Some Feature', () => {
 
-    beforeEach(() => {
-        // Put it in a before each
-        autoStub()
-
-    })
     it('should do the thing', () => {
-        // Or even at the test level
+        // Use it in the body of the test you want to stub
         autoStub()
 
     })
