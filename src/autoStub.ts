@@ -24,7 +24,7 @@ describe('Some Feature', () => {
  * @param config - local settings allow you to override any global settings for a particular instance
  */
 function autoStub(config: AutoStubLocalConfig = {}) {
-  const testTitle = (Cypress as any).mocha.getRunner().suite.ctx.test.title;
+  const testTitle = (Cypress as any).mocha.getRunner().test.title;
 
   cy.task("getGlobalConfig").then((globalConfig: any) => {
     const whitelist = config?.whitelist || globalConfig?.whitelist;

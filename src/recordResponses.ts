@@ -41,12 +41,11 @@ const recordResponses = () => {
   };
 
   // Once the test has completed
-  after(() => {
+  afterEach(() => {
     cy.task("writeMockFile", {
       contents: JSON.stringify(recordedRoutes, null, "\t"),
     });
   });
-
   setupAllRoutes();
 };
 
