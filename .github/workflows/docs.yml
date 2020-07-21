@@ -15,9 +15,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
         - uses: actions/checkout@v2
-        - run: yarn && yarn typedoc --out docs/ src/
-        - name: Commit changes
-          run: git add . && git commit -m "[skip ci]: update docs"
+        - run: yarn && yarn typedoc --out docs/ src/ && git add . && git commit -m "chore: update docs [skip ci]"
         - name: Push changes
           uses: ad-m/github-push-action@master
           with:
