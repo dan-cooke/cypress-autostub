@@ -16,4 +16,8 @@ jobs:
     steps:
         - uses: actions/checkout@v2
         - run: yarn && yarn typedoc --out docs/ src/
+        - name: Push changes
+          uses: ad-m/github-push-action@master
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
   
