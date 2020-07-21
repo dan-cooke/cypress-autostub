@@ -16,6 +16,8 @@ jobs:
     steps:
         - uses: actions/checkout@v2
         - run: yarn && yarn typedoc --out docs/ src/
+        - name: Commit changes
+          run: git add . && git commit -m "[skip ci]: update docs"
         - name: Push changes
           uses: ad-m/github-push-action@master
           with:
