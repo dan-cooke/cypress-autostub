@@ -3,7 +3,7 @@
  * @param recordedResponses
  */
 const stubResponses = (recordedResponses: any) => {
-  recordedResponses.forEach((route: any) => {
+  Object.values(recordedResponses).forEach((route: any) => {
     cy.route(route);
   });
 };

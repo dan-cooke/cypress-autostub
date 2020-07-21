@@ -87,4 +87,35 @@ export interface AutoStubLocalConfig {
    * If **true** we will begin overwriting any existing mock files for the current spec+test
    */
   forceRecord?: boolean;
+
+  /**
+   * The filename can be passed in to set where the stub should look for mock files, this is useful
+   * for sharing mocks between several similar specs.
+   */
+  filename?: string;
+
+  /**
+   * If true will overwrite any clashing route with the most recent response.
+   * For example:
+   * ```javascript
+   * beforeEach(() => {
+   *    // Quite often your spec files will make the same requests across all its tests
+   *    // autoStub accounts for this by disregarding requests read from a previous call
+   *    autoStub({ filename: 'shared-mocks' });
+   * 
+   *    // By default the shared-mocks file will contain this route
+        cy.request('api/hello')
+   * })
+
+   specify('some test', () => {
+     // If this test makes some additional requests that the others do not make, we should mock these as well
+     // However, without passing the `overrideExistingRoutes` the mock file here will not contain any duplicate
+     // routes that are already stubbed in `shared-mocks`
+     autoStub({ overrideExistingRoutes: true })
+   })
+   * 
+   * 
+   * ```
+   */
+  overrideExistingRoutes?: boolean;
 }
