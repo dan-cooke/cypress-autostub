@@ -2,14 +2,20 @@
   "name": "cypress-autostub",
   "version": "1.1.0",
   "author": "Daniel Cooke <danielcooke1996@gmail.com>",
-  "description": "",
+  "description": "Automatically record and stub requests made during your Cypress test suite",
+  "homepage": "https://github.com/dan-cooke/cypress-autostub",
+  "repository": {
+    "url": "https://github.com/dan-cooke/cypress-autostub"
+  },
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "cypress", "stub", "mocking", "record"
+  ],
   "author": "",
   "files": [
     "dist"
