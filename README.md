@@ -1,4 +1,6 @@
 ## cypress-autostub
+![release](https://github.com/dan-cooke/cypress-autostub/workflows/release/badge.svg)
+
 This plugin for the [Cypress automation framework](https://www.cypress.io/) alleviates the need to mantain brittle manual mocks by automating the **recording** and **stubbing** of requests.
 
 
