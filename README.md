@@ -10,7 +10,7 @@ This plugin for the [Cypress automation framework](https://www.cypress.io/) alle
 - Local spec configs to override globals
 - Simple to setup + mantain, plug-n-play auto mocking
 - CI/Robot friendly (record with an env variable)
-- Whitelist routes that you want to be ignored by the cypress server
+- [Whitelist routes](https://dan-cooke.github.io/cypress-autostub/interfaces/_types_.autostublocalconfig.html#whitelist) that you want to be ignored by the cypress server
 
 ### API Docs
 View the API docs [here](https://dan-cooke.github.io/cypress-autostub/index.html)
