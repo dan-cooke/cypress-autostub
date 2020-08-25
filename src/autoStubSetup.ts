@@ -22,6 +22,7 @@ const pluginTasks = {
     return false;
   },
   writeMockFile: ({ contents }: { contents: string }) => {
+    console.log('Writing mock file ', contents)
     const dir = path.dirname(mockFilePath);
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
