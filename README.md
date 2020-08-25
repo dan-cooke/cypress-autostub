@@ -10,6 +10,7 @@ This plugin for the [Cypress automation framework](https://www.cypress.io/) alle
 - Local spec configs to override globals
 - Simple to setup + mantain, plug-n-play auto mocking
 - CI/Robot friendly (record with an env variable)
+- Whitelist routes that you want to be ignored by the cypress server
 
 ### API Docs
 View the API docs [here](https://dan-cooke.github.io/cypress-autostub/index.html)
@@ -44,14 +45,15 @@ Import the stubbing/recording function in your spec files
 import { autoStub } from 'cypress-autostub'
 
 describe('Some Feature', () => {
+   // It MUST be called from inside the body of a describe block
+    autoStub()
+    
     beforeEach(() => {
-        // It can be called from any lifecycle hook
-        autoStub()
+        // ...
     })
 
     it('should do the thing', () => {
-        // Or from inside a test body
-        autoStub()
+        // Your test code
     })
 })
 ```
